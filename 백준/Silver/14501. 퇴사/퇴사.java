@@ -20,12 +20,13 @@ public class Main {
         int max = Integer.MIN_VALUE;
         
         for (int j = 1; j <= N+1; j++) {
-            // 상담 X: 이전 최대 이익 그대로
+            // 상담 X: 현재까지 얻을 수 있는 최대 이익을 dp[j]에 반영
             dp[j] = Math.max(dp[j], max);
 
-            // 상담 O: 상담 진행 후 끝나는 날에 대한 최대 이익 갱신
+            // 상담 O: 상담 진행 후 상담이 끝나는 날에 대한 최대 이익 갱신
             dp[j + Ti[j]] = Math.max(dp[j + Ti[j]], dp[j] + Pi[j]);
 
+            // 현재까지 얻을 수 있는 최대 이익을 max에 갱신
             max = Math.max(max, dp[j]);
         }
 
