@@ -19,10 +19,10 @@ class Solution {
         List<Integer> list = new LinkedList<>();
 
         while(!q.isEmpty()){
-            int value = q.poll(); //poll은 꺼내는 거
+            int value = q.poll();
             int cnt = 1;
             
-            while(!q.isEmpty() && value >= q.peek()) { //peek은 값 확인하는 거
+            while(!q.isEmpty() && value >= q.peek()) { 
                 cnt++;
                 q.poll();
             }
