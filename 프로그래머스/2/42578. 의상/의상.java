@@ -9,9 +9,9 @@ class Solution {
         int answer = 1; 
         
         for(String[] arr : clothes){
+            // getOrDefault
             //map.put(arr[1], map.getOrDefault(arr[1], 1) + 1);
             
-            // getOrDefault
             String category = arr[1];
             if (map.containsKey(category)) {
                 map.put(category, map.get(category) + 1); 
@@ -27,7 +27,7 @@ class Solution {
         //}
         
         for (int str : map.values()) {
-            answer *= (str + 1); 
+           answer *= (str + 1); 
         }
         
         return answer-1;
