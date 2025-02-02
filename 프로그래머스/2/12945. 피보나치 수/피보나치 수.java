@@ -3,6 +3,7 @@ class Solution {
         int answer = 0;
         int num = 1234567;
         
+        // 피보나치 수 기본 공식 (외우기)
         int[] dp = new int[n + 1]; 
         dp[0] = 0;  
         dp[1] = 1;  
