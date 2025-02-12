@@ -24,19 +24,20 @@ public class Main {
         // 다음 순열(next permutation) 알고리즘 사용
         int i = N-2;
         
-        // 내림차순이 시작되는 부분 찾기 (arr[i]<arr[i+1]인 i)
+        // 1. 내림차순이 시작되는 부분 찾기 (arr[i]<arr[i+1]인 i)
         while (i >= 0 && input[i+1] <= input[i]) i--;
         
         if (i == -1) {
             System.out.println(-1); // 마지막에 오는 순열
         }else {
             int j = N-1;
-            // i보다 큰 값 중 가장 작은 값 찾기
+            // 2. i 오른쪽에서 i보다 큰 값 중 가장 작은 값 찾기
             while (input[j] <= input[i]) j--; 
             
+            // 3. 교환
             swap(input, i, j);
             
-            // 순열 뒷부분 정렬 : arr[i+1]부터 arr[N]까지 정렬
+            // 4. i 오른쪽 정렬 : arr[i+1]부터 arr[N]까지 정렬
             Arrays.sort(input, i+1, N);
             
             for (int num : input) System.out.print(num + " ");
@@ -74,7 +75,7 @@ public class Main {
     }
 	
     // 원소 교환
-	public static void swap(int[] arr, int i, int j) {
+    public static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
