@@ -3,8 +3,8 @@ import java.io.*;
 public class Main {
     
     static int N;
-	static int[] input;
-	/*
+    static int[] input;
+    /*
     static int[] a;
     static int[] b;
     static boolean[] v;
